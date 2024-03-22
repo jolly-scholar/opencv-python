@@ -27,4 +27,10 @@ while True:
     # putting FPS display up
     cv2.putText(img, str(int(fps)), (20, 70), cv2.FONT_HERSHEY_PLAIN, 3, (255, 0, 255), 3)
     cv2.imshow("Image", img)
-    cv2.waitKey(1)
+    key = cv2.waitKey(1)
+    if key == ord('q'):  # Exit loop if 'q' key is pressed
+        break
+
+#release camera
+cap.release()
+cv2.destroyAllWindows()
